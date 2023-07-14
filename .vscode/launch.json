@@ -1,0 +1,12 @@
+{   "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python: Attach",
+            "type": "python",
+            "request": "attach",
+            "port": 51480, //careful, this used to be 3000 in older versions of vscode and this addon
+            "host": "localhost"
+        }
+    ]
+}
