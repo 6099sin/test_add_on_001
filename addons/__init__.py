@@ -8,25 +8,22 @@ bl_info = {
     "category": "Import-Export",
 }
 import bpy
-from bpy_extras.io_utils import ExportHelper
 
 
-class ExportGLTFWithCustomDataOperator(bpy.types.Operator, ExportHelper):
-    bl_idname = "export_custom.gltf"
-    bl_label = "Export GLTF with Custom Data"
-    filename_ext = ".gltf"
+class kok(bpy.types.Panel):
+    bl_label = "glTF Extras Data"
+    bl_space_type = 'VIEW_3D'
+    bl_region_type = 'UI'
+    bl_category = "glTF Extras data"
+    
 
-    def execute(self, context):
-        # Custom export code here
-        # Insert your custom data into the GLTF export process
-        return {'FINISHED'}
 
 def register():
-    bpy.utils.register_class(ExportGLTFWithCustomDataOperator)
+    bpy.utils.register_class(kok)
 
 
 def unregister():
-    bpy.utils.unregister_class(ExportGLTFWithCustomDataOperator)
+    bpy.utils.unregister_class(kok)
 
 
 if __name__ == "__main__":
