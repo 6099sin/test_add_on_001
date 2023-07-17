@@ -9,6 +9,7 @@ bl_info = {
 }
 
 import bpy
+import json
 from bpy.props import StringProperty, IntProperty, EnumProperty, CollectionProperty
 from bpy.types import Operator, Panel
 
@@ -43,11 +44,16 @@ class MyAddonOperator(Operator):
         my_enum = props.my_enum
         my_string_array = [item.string_item for item in props.my_string_array]
 
-        # Print the input values
-        print("String:", my_string)
-        print("Integer:", my_integer)
-        print("Enum:", my_enum)
-        print("String Array:", my_string_array)
+        # Create JSON data
+        data = {
+            "String": my_string,
+            "Integer": my_integer,
+            "Enum": my_enum,
+            "String Array": my_string_array
+        }
+        json_data = json.dumps(data, indent=4)
+        print("JSON Data:")
+        print(json_data)
 
         return {'FINISHED'}
 
